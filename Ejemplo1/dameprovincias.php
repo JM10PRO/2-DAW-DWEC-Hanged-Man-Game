@@ -7,10 +7,10 @@ $conexion = mysqli_connect("localhost",$username,$password,$database);
 
 $query = mysqli_query($conexion,"SELECT * FROM tbl_provincias");
 
-echo '<table>';
-echo '<tr><th>ID</th><td>provincias</td></tr>';
+echo '<select>';
+//echo '<tr><th>ID</th><td>provincias</td></tr>';
 
 while($row = mysqli_fetch_assoc($query)){
-    echo "<tr><td>".$row['cod']."</td><td>".$row['nombre']."</td></tr></td>";
+    echo "<option value=".$row['cod'].">".$row['nombre']."</option>";
 }
-echo '</table>';
+echo '</select>';
